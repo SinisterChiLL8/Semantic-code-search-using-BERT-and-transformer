@@ -2,19 +2,16 @@ from flask import Flask, render_template, request, url_for
 
 app = Flask(__name__)
 
-import tensorflow as tf
-
-import pandas as pd
-
-import nmslib
-
 import re
 
+import nmslib
+import pandas as pd
+import tensorflow as tf
 from transformers import AlbertTokenizer, TFAlbertModel
 
 albert_tokenizer = AlbertTokenizer.from_pretrained("albert-base-v2") 
 
-from transformers import  AlbertConfig
+from transformers import AlbertConfig
 
 config = AlbertConfig.from_pretrained('./albert', output_hidden_states=True)
 
